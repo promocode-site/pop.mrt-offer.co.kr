@@ -1,4 +1,9 @@
 function copyCoupon(code) {
+    const registrationWindow = window.open('https://new.pdpop.com/', '_blank');
+    if (!registrationWindow) {
+        window.location.assign('https://new.pdpop.com/');
+    }
+
     // 클립보드 복사
     const tempInput = document.createElement('input');
     tempInput.value = code;
@@ -9,8 +14,6 @@ function copyCoupon(code) {
 
     alert('쿠폰 코드가 복사되었습니다: ' + code + '\n확인을 누르면 등록 페이지로 이동합니다.');
     
-    // 등록 페이지 이동 (팝업 차단 방지를 위해 즉시 실행)
-    window.open('https://new.pdpop.com/', '_blank');
 }
 
 function calculateValue() {
